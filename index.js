@@ -5,7 +5,10 @@ const Theme = require('./models/theme');
 const Word = require('./models/word');
 require('dotenv').config()
 
-const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+var port = process.env.PORT || 8443;
+var host = process.env.HOST;
+
+const bot = new TelegramBot(process.env.BOT_TOKEN, {webHook: {port: port, host: host}});
 
 const db = 'mongodb+srv://admin:0987864021@cluster0.r7kee.mongodb.net/nle?retryWrites=true&w=majority'
 mongoose.connect(db, {
