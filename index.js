@@ -5,10 +5,15 @@ const Theme = require('./models/theme');
 const Word = require('./models/word');
 require('dotenv').config()
 
-var port = process.env.PORT || 8443;
-var host = process.env.HOST;
+const token = process.env.BOT_TOKEN;
+let bot;
 
-const bot = new TelegramBot(process.env.BOT_TOKEN, {webHook: {port: port, host: host}});
+if (process.env.NODE_ENV === 'production') {
+   bot = new TelegramBot(token);
+   bot.setWebHook(process.env.HEROKU_URL + bot.token);
+} else {
+   bot = new TelegramBot(token, { polling: true });
+}
 
 const db = 'mongodb+srv://admin:0987864021@cluster0.r7kee.mongodb.net/nle?retryWrites=true&w=majority'
 mongoose.connect(db, {
