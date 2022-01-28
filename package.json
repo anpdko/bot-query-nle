@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "dotenv": "^14.3.2",
+    "mongoose": "^6.1.8",
+    "node-telegram-bot-api": "^0.56.0"
+  },
+  "name": "bot-nle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "andrey",
+  "license": "MIT",
+  "description": "",
+  "engines": {
+    "node": "14.x"
+  }
+}
