@@ -5,23 +5,23 @@ const Theme = require('./models/theme');
 const Word = require('./models/word');
 require('dotenv').config();
 
-console.log(process.env.PORT);
 
-const options = {
-   webHook: {
-       port: process.env.PORT
-   }
-};
+// const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true }, 200);
 
-const bot = new TelegramBot(process.env.BOT_TOKEN, options);
+// const options = {
+//    webHook: {
+//        port: process.env.PORT
+//    }
+// };
+// const bot = new TelegramBot(process.env.BOT_TOKEN, options);
 
 
-// var port = process.env.PORT || 443,
-//     host = '0.0.0.0',  // probably this change is not required
-//     externalUrl = process.env.HEROKU_URL || 'https://my-app.herokuapp.com',
-//     token = process.env.BOT_TOKEN,
-//     bot = new TelegramBot(process.env.BOT_TOKEN, { webHook: { port : port, host : host } });
-// bot.setWebHook(externalUrl + ':'+port+'/bot' + token);
+var port = 8443,
+    host = '0.0.0.0',
+    externalUrl = process.env.HEROKU_URL,
+    token = process.env.BOT_TOKEN,
+    bot = new TelegramBot(process.env.BOT_TOKEN, { webHook: { port : port, host : host } });
+bot.setWebHook(externalUrl + ':'+port+'/bot' + token);
 
 const db = 'mongodb+srv://admin:0987864021@cluster0.r7kee.mongodb.net/nle?retryWrites=true&w=majority'
 mongoose.connect(db, {
