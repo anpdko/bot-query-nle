@@ -6,7 +6,8 @@
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "mongoose": "^6.1.8",
-    "node-telegram-bot-api": "^0.56.0"
+    "node-telegram-bot-api": "^0.56.0",
+    "vercel": "^23.1.2"
   },
   "name": "bot-nle",
   "version": "1.0.0",
@@ -20,7 +21,7 @@
     "heroku"
   ],
   "author": "andrey",
-  "license": "MIT",
+  "license": "ISC",
   "description": "",
   "engines": {
     "node": "14.x"
