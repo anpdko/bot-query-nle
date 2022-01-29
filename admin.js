@@ -45,6 +45,7 @@ const adminJsOptions = {
 AdminJS.registerAdapter(AdminJSMongoose)
 
 const db = process.env.BD
+const PORT = process.env.PORT || 8080;
 
 module.exports = {
    run: function(){
@@ -59,7 +60,7 @@ module.exports = {
    
          const router = AdminJSExpress.buildRouter(adminJs)
          app.use(adminJs.options.rootPath, router)
-         app.listen(8080, () => console.log('AdminJS is running under localhost:8080/admin'))
+         app.listen(PORT, () => console.log('AdminJS is running under localhost:8080/admin'))
       })
       .catch((err) => console.log(err))
    }
