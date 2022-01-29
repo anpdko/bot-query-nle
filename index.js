@@ -3,11 +3,29 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 const Theme = require('./models/theme');
 const Word = require('./models/word');
-require('dotenv').config()
+require('dotenv').config();
+const admin = require('./admin');
 
-const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+admin.run();
 
-const db = 'mongodb+srv://admin:0987864021@cluster0.r7kee.mongodb.net/nle?retryWrites=true&w=majority'
+const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true }, 200);
+
+// const options = {
+//    webHook: {
+//        port: process.env.PORT
+//    }
+// };
+// const bot = new TelegramBot(process.env.BOT_TOKEN, options);
+
+
+// var port = 8443,
+//     host = '0.0.0.0',
+//     externalUrl = process.env.HEROKU_URL,
+//     token = process.env.BOT_TOKEN,
+//     bot = new TelegramBot(process.env.BOT_TOKEN, { webHook: { port : port, host : host } });
+// bot.setWebHook(externalUrl + ':'+port+'/bot' + token);
+
+const db = process.env.BD
 mongoose.connect(db, {
       useNewUrlParser: true, 
       useUnifiedTopology: true})

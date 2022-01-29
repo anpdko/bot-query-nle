@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "@adminjs/express": "^4.0.1",
+    "@adminjs/mongoose": "^2.0.0",
+    "adminjs": "^5.5.1",
     "dotenv": "^14.3.2",
+    "express": "^4.17.2",
     "mongoose": "^6.1.8",
     "node-telegram-bot-api": "^0.56.0"
   },
