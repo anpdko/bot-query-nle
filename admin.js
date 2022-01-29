@@ -39,7 +39,7 @@ const adminJsOptions = {
         }
       }
     },
-    rootPath: '/admin'
+    rootPath: '/'
  }
 
 AdminJS.registerAdapter(AdminJSMongoose)
